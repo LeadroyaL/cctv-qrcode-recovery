@@ -1,6 +1,6 @@
 # 从涂抹的二维码中恢复网址
 
-在央视新闻《记者测试：AI能复原被破坏的二维码吗？》节目（原片见 [`cctv-news.mp4`](cctv-news.mp4)）中，记者用黑笔大面积涂抹了一张二维码，发给 AI 测试能否复原，最终因为扫不出任何内容而得出结论：**重度涂抹的二维码，AI 无法复原**。
+在央视新闻《当打了马赛克的二维码遇上AI，还能扫出来吗？》节目（原片见 [`cctv-news.mp4`](cctv-news.mp4)）中，记者用黑笔大面积涂抹了一张二维码，发给 AI 测试能否复原，最终因为扫不出任何内容而得出结论：**重度涂抹的二维码，AI 无法复原**。
 
 原始链接：https://www.bilibili.com/video/BV17FxE6jExP
 
@@ -75,4 +75,23 @@
 ```sh
 python3 -m pip install numpy "qrcode[pil]" reedsolo
 python3 solve_qr_urls.py
+
+矩阵：Version 3，纠错 Q，掩模 6。已知模块 176 个，未知模块 384 个。
+求解 http://，尝试总长 7–32 字节。
+求解 https://，尝试总长 8–32 字节。
+恰好 0 个模块误判：尝试 51 组，1 组有解，得到 8 条字节串，0 条通过网址检查。
+恰好 1 个模块误判：尝试 8976 组，42 组有解，得到 252 条字节串，1 条通过网址检查。
+{
+  "exactly_0_errors": [],
+  "exactly_1_errors": [
+    {
+      "url": "https://www.baidu.com",
+      "mismatch_row_column": [
+        22,
+        17
+      ]
+    }
+  ]
+}
+已输出二维码：recovered-qr.png
 ```
